@@ -1,0 +1,10 @@
+host <%= @hostname %> {
+  option host-name "<%= @hostname %>";
+  hardware ethernet <%= @macaddress %>;
+  fixed-address <%= @ipaddress %>;
+<% if not @options.empty? -%>
+<%   @options.each do |option| -%>
+  <%= option %>;
+<%   end -%>
+<% end -%>
+}
